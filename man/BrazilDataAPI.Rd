@@ -4,18 +4,18 @@
 \name{BrazilDataAPI}
 \alias{BrazilDataAPI}
 \alias{BrazilDataAPI-package}
-\title{BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets}
+\title{BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets}
 \description{
 {
-This package provides functions to access data from the 'BrasilAPI' and the 'REST Countries API',related to Brazil's postal codes, banks, holidays, company registrations, and international country indicators.
+This package provides functions to access data from the 'BrasilAPI', 'REST Countries API','Nager.Date API', and 'World Bank API', related to Brazil's postal codes, banks, holidays,company registrations, international country indicators, public holidays information, and economic development data. Additionally, the package includes curated datasets related to Brazil, covering topics such as demographic data,river levels, environmental emission factors, film festivals, and yellow fever outbreak records.
 }
 }
 \details{
-BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets
+BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets
 
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets.
+Access Brazilian Data via APIs and Curated Datasets.
 }
 \seealso{
 {

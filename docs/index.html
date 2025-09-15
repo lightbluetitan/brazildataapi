@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets • BrazilDataAPI</title>
+<title>Access Brazilian Data via APIs and Curated Datasets • BrazilDataAPI</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -15,9 +15,9 @@
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets">
-<meta name="description" content="Provides functions to access data from the BrasilAPI and the REST Countries API, related to Brazils postal codes, banks, holidays, company registrations, and international country indicators. Additionally, the package includes curated datasets related to Brazil, covering topics such as demographic data (males and females by state and year), river levels, environmental emission factors, film festivals, and yellow fever outbreak records. The package supports research and analysis focused on Brazil by integrating open APIs with high-quality datasets from multiple domains. For more details on the BrasilAPI, see &lt;https://brasilapi.com.br/&gt;, and for REST Countries', see &lt;https://restcountries.com/&gt;.">
-<meta property="og:description" content="Provides functions to access data from the BrasilAPI and the REST Countries API, related to Brazils postal codes, banks, holidays, company registrations, and international country indicators. Additionally, the package includes curated datasets related to Brazil, covering topics such as demographic data (males and females by state and year), river levels, environmental emission factors, film festivals, and yellow fever outbreak records. The package supports research and analysis focused on Brazil by integrating open APIs with high-quality datasets from multiple domains. For more details on the BrasilAPI, see &lt;https://brasilapi.com.br/&gt;, and for REST Countries', see &lt;https://restcountries.com/&gt;.">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access Brazilian Data via APIs and Curated Datasets">
+<meta name="description" content="Provides functions to access data from the BrasilAPI, REST Countries API, Nager.Date API, and World Bank API, related to Brazils postal codes, banks, holidays, company registrations, international country indicators, public holidays information, and economic development data. Additionally, the package includes curated datasets related to Brazil, covering topics such as demographic data (males and females by state and year), river levels, environmental emission factors, film festivals, and yellow fever outbreak records. The package supports research and analysis focused on Brazil by integrating open APIs with high-quality datasets from multiple domains. For more information on the APIs, see: BrasilAPI &lt;https://brasilapi.com.br/&gt;, Nager.Date &lt;https://date.nager.at/Api&gt;, World Bank API &lt;https://datahelpdesk.worldbank.org/knowledgebase/articles/889392&gt;, and REST Countries API' &lt;https://restcountries.com/&gt;.">
+<meta property="og:description" content="Provides functions to access data from the BrasilAPI, REST Countries API, Nager.Date API, and World Bank API, related to Brazils postal codes, banks, holidays, company registrations, international country indicators, public holidays information, and economic development data. Additionally, the package includes curated datasets related to Brazil, covering topics such as demographic data (males and females by state and year), river levels, environmental emission factors, film festivals, and yellow fever outbreak records. The package supports research and analysis focused on Brazil by integrating open APIs with high-quality datasets from multiple domains. For more information on the APIs, see: BrasilAPI &lt;https://brasilapi.com.br/&gt;, Nager.Date &lt;https://date.nager.at/Api&gt;, World Bank API &lt;https://datahelpdesk.worldbank.org/knowledgebase/articles/889392&gt;, and REST Countries API' &lt;https://restcountries.com/&gt;.">
 <meta property="og:image" content="https://lightbluetitan.github.io/brazildataapi/logo.png">
 </head>
 <body>
@@ -28,7 +28,7 @@
 
     <a class="navbar-brand me-2" href="index.html">BrazilDataAPI</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +41,10 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="articles/BrazilDataAPI_vignette.html">BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets</a></li>
+<li><a class="dropdown-item" href="articles/BrazilDataAPI_vignette.html">BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets</a></li>
   </ul>
 </li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -62,9 +63,8 @@
 <img src="logo.png" class="logo" alt=""><h1 id="brazildataapi">BrazilDataAPI<a class="anchor" aria-label="anchor" href="#brazildataapi"></a>
 </h1>
 </div>
-<p>The <code>BrazilDataAPI</code> package provides a unified interface to access open data from the <strong>BrasilAPI</strong> and the <strong>REST Countries API</strong>, with a focus on <em>Brazil</em>. It allows users to easily retrieve up-to-date information on postal codes, banks, economic indicators, holidays, company registrations, and international country-level data relevant to <em>Brazil</em>.</p>
+<p>The <code>BrazilDataAPI</code> package provides a unified interface to access open data from the <strong>BrasilAPI</strong>, <strong>REST Countries API</strong>, <strong>Nager.Date API</strong>, and <strong>World Bank API</strong>, with a focus on <em>Brazil</em>. It allows users to easily retrieve up-to-date information on postal codes, banks, economic indicators, holidays, company registrations, international country-level data, public holidays information, and economic development data relevant to <em>Brazil</em>.</p>
 <p>In addition to API-access functions, the package includes a collection of curated datasets related to <em>Brazil</em>, covering diverse domains such as demographics (male and female population by state and year), river levels in <em>Manaus</em>, environmental emission factors in <em>São Paulo</em>, Brazilian film festivals, and historical yellow fever outbreaks.</p>
-<p><code>BrazilDataAPI</code> is designed to support research, teaching, and data analysis focused on Brazil by integrating public RESTful APIs with high-quality, domain-specific datasets into a single, easy-to-use R package.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -91,7 +91,18 @@
 <li><p><code><a href="reference/get_brazil_rate_name.html">get_brazil_rate_name()</a></code>: Get Specific Brazilian Economic Rate by Name Example: <em>get_brazil_rate_name(“CDI”)</em></p></li>
 <li><p><code><a href="reference/get_brazil_rates.html">get_brazil_rates()</a></code>: Get Official Interest Rates and Indexes from Brazil</p></li>
 <li><p><code><a href="reference/get_brazil_vehicle_brands.html">get_brazil_vehicle_brands()</a></code>: Get Vehicle Brands from BrasilAPI (FIPE Data) Example: <em>get_brazil_vehicle_brands(“motos”)</em>,<em>get_brazil_vehicle_brands(“caminhoes”)</em></p></li>
-<li><p><code><a href="reference/get_country_info.html">get_country_info()</a></code>: Get essential information about Brazil or any other country by its full name Example: <em>get_country_info(“Brazil”)</em>,<em>get_country_info(“brazil”)</em>,<em>get_country_info(“Peru”)</em></p></li>
+<li><p><code>get_country_info()</code>: Get essential information about Brazil or any other country by its full name Example: <em>get_country_info(“Brazil”)</em>,<em>get_country_info(“brazil”)</em>,<em>get_country_info(“Peru”)</em></p></li>
+<li><p><code><a href="reference/get_country_info_br.html">get_country_info_br()</a></code>: Get key country information for Brazil.</p></li>
+<li><p><code><a href="reference/get_brazil_child_mortality.html">get_brazil_child_mortality()</a></code>: Get Brazil’s Under-5 Mortality Rate data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_cpi.html">get_brazil_cpi()</a></code>: Get Brazil’s Consumer Price Index (2010 = 100) data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_energy_use.html">get_brazil_energy_use()</a></code>: Get Brazil’s Energy Use (kg of oil equivalent per capita) data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_gdp.html">get_brazil_gdp()</a></code>: Get Brazil’s GDP (current US$) data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_hospital_beds.html">get_brazil_hospital_beds()</a></code>: Get Brazil’s Hospital Beds (per 1,000 people) data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_life_expectancy.html">get_brazil_life_expectancy()</a></code>: Get Brazil’s Life Expectancy at Birth data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_literacy_rate.html">get_brazil_literacy_rate()</a></code>: Get Brazil’s Adult Literacy Rate data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_population.html">get_brazil_population()</a></code>: Get Brazil’s Total Population data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_unemployment.html">get_brazil_unemployment()</a></code>: Get Brazil’s Total Unemployment Rate data from the World Bank.</p></li>
+<li><p><code><a href="reference/get_brazil_holidays.html">get_brazil_holidays()</a></code>: Get official public holidays in Brazil for a given year, e.g., <code>get_brazil_holidays(2025)</code>.</p></li>
 <li><p><code><a href="reference/view_datasets_BrazilDataAPI.html">view_datasets_BrazilDataAPI()</a></code>: Lists all curated datasets included in the <code>BrazilDataAPI</code> package</p></li>
 </ul>
 </div>
@@ -118,7 +129,7 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lightbluetitan/brazildataapi" class="external-link">BrazilDataAPI</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Selected, essential information about Brazil</span></span>
-<span><span class="fu"><a href="reference/get_country_info.html">get_country_info</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/get_country_info_br.html">get_country_info_br</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Get List of Banks in Brazil</span></span>
 <span><span class="fu"><a href="reference/get_brazil_banks.html">get_brazil_banks</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -140,6 +151,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=BrazilDataAPI" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/lightbluetitan/brazildataapi/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/lightbluetitan/brazildataapi/issues" class="external-link">Report a bug</a></li>
 </ul>

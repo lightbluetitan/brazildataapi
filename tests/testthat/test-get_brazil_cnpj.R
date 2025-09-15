@@ -1,5 +1,5 @@
-# BrazilDataAPI - Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets
-# Version 0.1.0
+# BrazilDataAPI - Access Brazilian Data via APIs and Curated Datasets
+# Version 0.2.0
 # Copyright (C) 2025 Renzo Caceres Rossi
 #
 # This program is free software: you can redistribute it and/or modify

@@ -1,8 +1,8 @@
 ---
-title: "BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets"
+title: "BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets}
+  %\VignetteIndexEntry{BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,15 +23,16 @@ library(dplyr)
 
 # Introduction
 
-The `BrazilDataAPI` package provides a unified interface to access open data from the **BrasilAPI** and the **REST Countries API**, with a focus on *Brazil*. It allows users to easily retrieve up-to-date information on postal codes, banks, economic indicators, holidays, company registrations, and international country-level data relevant to *Brazil*.
+The `BrazilDataAPI` package provides a unified interface to access open data from the **BrasilAPI**, **REST Countries API**, **Nager.Date API**, and **World Bank API**, with a focus on *Brazil*. It allows users to easily retrieve up-to-date information on postal codes, banks, economic indicators, holidays, company registrations, international country-level data, public holidays information, and economic development data relevant to *Brazil*.
 
 In addition to API-access functions, the package includes a collection of curated datasets related to *Brazil*, covering diverse domains such as demographics (male and female population by state and year), river levels in *Manaus*, environmental emission factors in *São Paulo*, Brazilian film festivals, and historical yellow fever outbreaks.
 
-`BrazilDataAPI` is designed to support research, teaching, and data analysis focused on Brazil by integrating public RESTful APIs with high-quality, domain-specific datasets into a single, easy-to-use R package.
+`BrazilDataAPI` is designed to support research, teaching, and data analysis focused on Brazil by integrating public RESTful APIs with high-quality, domain-specific datasets from multiple domains into a single, easy-to-use R package.
 
 ## Functions for BrazilDataAPI
 
-The `BrazilDataAPI` package provides several core functions to access real-time and structured information about Brazil from public APIs such as [BrasilAPI](https://brasilapi.com.br/) and [REST Countries](https://restcountries.com/). Below is a list of the main functions included in the package:
+The `BrazilDataAPI` package provides several core functions to access real-time and structured information about Brazil from public APIs such as [BrasilAPI](https://brasilapi.com.br/), [REST Countries](https://restcountries.com/), [Nager.Date API](https://date.nager.at/Api), and [World Bank API](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392). 
+Below is a list of the main functions included in the package:
 
 - `get_brazil_banks()`: Get List of Banks in Brazil
 
@@ -52,8 +53,27 @@ Example: *get_brazil_rate_name("CDI")*
 - `get_brazil_vehicle_brands()`: Get Vehicle Brands from BrasilAPI (FIPE Data)
 Example: *get_brazil_vehicle_brands("motos")*,*get_brazil_vehicle_brands("caminhoes")*
 
-- `get_country_info()`: Get essential information about Brazil or any other country by its full name
-Example: *get_country_info("Brazil")*,*get_country_info("brazil")*,*get_country_info("Peru")*
+- `get_country_info_br()`: Get key country information for Brazil. 
+
+- `get_brazil_child_mortality()`: Get Brazil’s Under-5 Mortality Rate data from the World Bank.
+
+- `get_brazil_cpi()`: Get Brazil’s Consumer Price Index (2010 = 100) data from the World Bank.
+
+- `get_brazil_energy_use()`: Get Brazil’s Energy Use (kg of oil equivalent per capita) data from the World Bank.
+
+- `get_brazil_gdp()`: Get Brazil’s GDP (current US$) data from the World Bank.
+
+- `get_brazil_hospital_beds()`: Get Brazil’s Hospital Beds (per 1,000 people) data from the World Bank.
+
+- `get_brazil_life_expectancy()`: Get Brazil’s Life Expectancy at Birth data from the World Bank.
+
+- `get_brazil_literacy_rate()`: Get Brazil’s Adult Literacy Rate data from the World Bank.
+
+- `get_brazil_population()`: Get Brazil’s Total Population data from the World Bank.
+
+- `get_brazil_unemployment()`: Get Brazil’s Total Unemployment Rate data from the World Bank.
+
+- `get_brazil_holidays()`: Get official public holidays in Brazil for a given year, e.g., `get_brazil_holidays(2025)`.
 
 - `view_datasets_BrazilDataAPI()`: Lists all curated datasets included in the `BrazilDataAPI` package
 
@@ -93,6 +113,29 @@ print(brazil_vehicles)
 brazil_Municipalities <- get_brazil_municipalities("SP")
 
 print(brazil_Municipalities)
+
+```
+
+
+### Brazil's GDP (Current US$) from World Bank 2022 - 2017
+
+```{r brazil-gdp,echo = TRUE,message = FALSE,warning = FALSE,results = 'markup'}
+
+
+brazil_gdp <- head(get_brazil_gdp())
+
+print(brazil_gdp)
+
+```
+
+
+### Brazil's Life Expectancy at Birth from World Bank 2022 - 2017
+
+```{r brazil-life-expectancy,echo = TRUE,message = FALSE,warning = FALSE,results = 'markup'}
+
+brazil_life_expectancy <- head(get_brazil_life_expectancy())
+
+print(brazil_life_expectancy)
 
 ```
 
@@ -153,6 +196,6 @@ A list object containing information on the flow of Yellow Fever cases between f
 
 ## Conclusion
 
-The `BrazilDataAPI` package provides a robust set of tools to access open data about Brazil through RESTful APIs and curated datasets. It includes functions to retrieve information about postal codes, banks, economic rates, and company registrations via the *BrasilAPI*, as well as international country indicators through the *REST Countries API*. Additionally, it offers preloaded datasets on Brazil’s male and female population by state and year, film festivals, São Paulo’s emission factors, river data from Manaus, and records of yellow fever outbreaks.
+The `BrazilDataAPI` package provides a robust set of tools to access open data about Brazil through RESTful APIs and curated datasets. It includes functions to retrieve information about postal codes, banks, economic rates, company registrations, and holidays via the *BrasilAPI*, international country indicators through the *REST Countries API*, public holidays information through the *Nager.Date API*, and economic development data through the *World Bank API*. Additionally, it offers preloaded datasets on Brazil's male and female population by state and year, film festivals, São Paulo's emission factors, river data from Manaus, and records of yellow fever outbreaks.
 
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

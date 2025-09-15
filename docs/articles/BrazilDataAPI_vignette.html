@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets • BrazilDataAPI</title>
+<title>BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets • BrazilDataAPI</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -15,7 +15,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -25,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">BrazilDataAPI</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,9 +38,10 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/BrazilDataAPI_vignette.html">BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets</a></li>
+<li><a class="dropdown-item" href="../articles/BrazilDataAPI_vignette.html">BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets</a></li>
   </ul>
 </li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -59,7 +60,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>BrazilDataAPI: Access Brazilian Economic, Demographic, Environmental, and Geopolitical Data via RESTful APIs and Curated Datasets</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>BrazilDataAPI: Access Brazilian Data via APIs and Curated Datasets</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/lightbluetitan/brazildataapi/blob/HEAD/vignettes/BrazilDataAPI_vignette.Rmd" class="external-link"><code>vignettes/BrazilDataAPI_vignette.Rmd</code></a></small>
@@ -84,11 +85,13 @@
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>The <code>BrazilDataAPI</code> package provides a unified interface
-to access open data from the <strong>BrasilAPI</strong> and the
-<strong>REST Countries API</strong>, with a focus on <em>Brazil</em>. It
+to access open data from the <strong>BrasilAPI</strong>, <strong>REST
+Countries API</strong>, <strong>Nager.Date API</strong>, and
+<strong>World Bank API</strong>, with a focus on <em>Brazil</em>. It
 allows users to easily retrieve up-to-date information on postal codes,
-banks, economic indicators, holidays, company registrations, and
-international country-level data relevant to <em>Brazil</em>.</p>
+banks, economic indicators, holidays, company registrations,
+international country-level data, public holidays information, and
+economic development data relevant to <em>Brazil</em>.</p>
 <p>In addition to API-access functions, the package includes a
 collection of curated datasets related to <em>Brazil</em>, covering
 diverse domains such as demographics (male and female population by
@@ -97,15 +100,16 @@ factors in <em>São Paulo</em>, Brazilian film festivals, and historical
 yellow fever outbreaks.</p>
 <p><code>BrazilDataAPI</code> is designed to support research, teaching,
 and data analysis focused on Brazil by integrating public RESTful APIs
-with high-quality, domain-specific datasets into a single, easy-to-use R
-package.</p>
+with high-quality, domain-specific datasets from multiple domains into a
+single, easy-to-use R package.</p>
 <div class="section level3">
 <h3 id="functions-for-brazildataapi">Functions for BrazilDataAPI<a class="anchor" aria-label="anchor" href="#functions-for-brazildataapi"></a>
 </h3>
 <p>The <code>BrazilDataAPI</code> package provides several core
 functions to access real-time and structured information about Brazil
-from public APIs such as <a href="https://brasilapi.com.br/" class="external-link">BrasilAPI</a> and <a href="https://restcountries.com/" class="external-link">REST Countries</a>. Below is a list of
-the main functions included in the package:</p>
+from public APIs such as <a href="https://brasilapi.com.br/" class="external-link">BrasilAPI</a>, <a href="https://restcountries.com/" class="external-link">REST Countries</a>, <a href="https://date.nager.at/Api" class="external-link">Nager.Date API</a>, and <a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392" class="external-link">World
+Bank API</a>. Below is a list of the main functions included in the
+package:</p>
 <ul>
 <li><p><code><a href="../reference/get_brazil_banks.html">get_brazil_banks()</a></code>: Get List of Banks in
 Brazil</p></li>
@@ -125,9 +129,29 @@ Indexes from Brazil</p></li>
 <li><p><code><a href="../reference/get_brazil_vehicle_brands.html">get_brazil_vehicle_brands()</a></code>: Get Vehicle Brands from
 BrasilAPI (FIPE Data) Example:
 <em>get_brazil_vehicle_brands(“motos”)</em>,<em>get_brazil_vehicle_brands(“caminhoes”)</em></p></li>
-<li><p><code><a href="../reference/get_country_info.html">get_country_info()</a></code>: Get essential information about
-Brazil or any other country by its full name Example:
-<em>get_country_info(“Brazil”)</em>,<em>get_country_info(“brazil”)</em>,<em>get_country_info(“Peru”)</em></p></li>
+<li><p><code><a href="../reference/get_country_info_br.html">get_country_info_br()</a></code>: Get key country information
+for Brazil.</p></li>
+<li><p><code><a href="../reference/get_brazil_child_mortality.html">get_brazil_child_mortality()</a></code>: Get Brazil’s Under-5
+Mortality Rate data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_cpi.html">get_brazil_cpi()</a></code>: Get Brazil’s Consumer Price Index
+(2010 = 100) data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_energy_use.html">get_brazil_energy_use()</a></code>: Get Brazil’s Energy Use (kg
+of oil equivalent per capita) data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_gdp.html">get_brazil_gdp()</a></code>: Get Brazil’s GDP (current US$)
+data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_hospital_beds.html">get_brazil_hospital_beds()</a></code>: Get Brazil’s Hospital
+Beds (per 1,000 people) data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_life_expectancy.html">get_brazil_life_expectancy()</a></code>: Get Brazil’s Life
+Expectancy at Birth data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_literacy_rate.html">get_brazil_literacy_rate()</a></code>: Get Brazil’s Adult
+Literacy Rate data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_population.html">get_brazil_population()</a></code>: Get Brazil’s Total
+Population data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_unemployment.html">get_brazil_unemployment()</a></code>: Get Brazil’s Total
+Unemployment Rate data from the World Bank.</p></li>
+<li><p><code><a href="../reference/get_brazil_holidays.html">get_brazil_holidays()</a></code>: Get official public holidays
+in Brazil for a given year, e.g.,
+<code>get_brazil_holidays(2025)</code>.</p></li>
 <li><p><code><a href="../reference/view_datasets_BrazilDataAPI.html">view_datasets_BrazilDataAPI()</a></code>: Lists all curated
 datasets included in the <code>BrazilDataAPI</code> package</p></li>
 </ul>
@@ -152,7 +176,7 @@ following sections, you’ll find examples on how to work with
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Selic 15   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> CDI   14.9 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> IPCA   5.32</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> IPCA   5.13</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="get-vehicle-brands-from-brasilapi-fipe-data">Get Vehicle Brands from BrasilAPI (FIPE Data)<a class="anchor" aria-label="anchor" href="#get-vehicle-brands-from-brasilapi-fipe-data"></a>
@@ -164,7 +188,7 @@ following sections, you’ll find examples on how to work with
 <span><span class="va">brazil_vehicles</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_brazil_vehicle_brands.html">get_brazil_vehicle_brands</a></span><span class="op">(</span><span class="st">"motos"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">brazil_vehicles</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 94 × 2</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 96 × 2</span></span></span>
 <span><span class="co">#&gt;    nome     valor</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> ADLY     60   </span></span>
@@ -177,7 +201,7 @@ following sections, you’ll find examples on how to work with
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> BMW      67   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> BRANDY   68   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> byCristo 69   </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 84 more rows</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 86 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="get-municipalities-of-a-brazilian-state">Get Municipalities of a Brazilian State<a class="anchor" aria-label="anchor" href="#get-municipalities-of-a-brazilian-state"></a>
@@ -205,9 +229,46 @@ following sections, you’ll find examples on how to work with
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 635 more rows</span></span></span></code></pre></div>
 </div>
 <div class="section level4">
-<h4 id="female-deaths-by-age-group-in-brazil">Female Deaths by Age Group in Brazil<a class="anchor" aria-label="anchor" href="#female-deaths-by-age-group-in-brazil"></a>
+<h4 id="brazils-gdp-current-us-from-world-bank-2022---2017">Brazil’s GDP (Current US$) from World Bank 2022 - 2017<a class="anchor" aria-label="anchor" href="#brazils-gdp-current-us-from-world-bank-2022---2017"></a>
 </h4>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span></span>
+<span><span class="va">brazil_gdp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_brazil_gdp.html">get_brazil_gdp</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">brazil_gdp</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 5</span></span></span>
+<span><span class="co">#&gt;   indicator         country  year   value value_label      </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> GDP (current US$) Brazil   <span style="text-decoration: underline;">2</span>022 1.95<span style="color: #949494;">e</span>12 1,951,923,942,083</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> GDP (current US$) Brazil   <span style="text-decoration: underline;">2</span>021 1.67<span style="color: #949494;">e</span>12 1,670,647,398,905</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> GDP (current US$) Brazil   <span style="text-decoration: underline;">2</span>020 1.48<span style="color: #949494;">e</span>12 1,476,107,231,310</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> GDP (current US$) Brazil   <span style="text-decoration: underline;">2</span>019 1.87<span style="color: #949494;">e</span>12 1,873,288,205,060</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> GDP (current US$) Brazil   <span style="text-decoration: underline;">2</span>018 1.92<span style="color: #949494;">e</span>12 1,916,933,898,011</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> GDP (current US$) Brazil   <span style="text-decoration: underline;">2</span>017 2.06<span style="color: #949494;">e</span>12 2,063,514,977,366</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="brazils-life-expectancy-at-birth-from-world-bank-2022---2017">Brazil’s Life Expectancy at Birth from World Bank 2022 - 2017<a class="anchor" aria-label="anchor" href="#brazils-life-expectancy-at-birth-from-world-bank-2022---2017"></a>
+</h4>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">brazil_life_expectancy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/get_brazil_life_expectancy.html">get_brazil_life_expectancy</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">brazil_life_expectancy</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">#&gt;   indicator                               country  year value</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Life expectancy at birth, total (years) Brazil   <span style="text-decoration: underline;">2</span>022  74.9</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Life expectancy at birth, total (years) Brazil   <span style="text-decoration: underline;">2</span>021  73.0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Life expectancy at birth, total (years) Brazil   <span style="text-decoration: underline;">2</span>020  74.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Life expectancy at birth, total (years) Brazil   <span style="text-decoration: underline;">2</span>019  75.8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Life expectancy at birth, total (years) Brazil   <span style="text-decoration: underline;">2</span>018  75.6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Life expectancy at birth, total (years) Brazil   <span style="text-decoration: underline;">2</span>017  75.4</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="female-deaths-by-age-group-in-brazil">Female Deaths by Age Group in Brazil<a class="anchor" aria-label="anchor" href="#female-deaths-by-age-group-in-brazil"></a>
+</h4>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># Summarize total deaths by age and year</span></span>
 <span><span class="va">df_plot</span> <span class="op">&lt;-</span> <span class="va">Brasil_females_df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -271,12 +332,14 @@ between five Brazilian states during the outbreak period from December
 <p>The <code>BrazilDataAPI</code> package provides a robust set of tools
 to access open data about Brazil through RESTful APIs and curated
 datasets. It includes functions to retrieve information about postal
-codes, banks, economic rates, and company registrations via the
-<em>BrasilAPI</em>, as well as international country indicators through
-the <em>REST Countries API</em>. Additionally, it offers preloaded
-datasets on Brazil’s male and female population by state and year, film
-festivals, São Paulo’s emission factors, river data from Manaus, and
-records of yellow fever outbreaks.</p>
+codes, banks, economic rates, company registrations, and holidays via
+the <em>BrasilAPI</em>, international country indicators through the
+<em>REST Countries API</em>, public holidays information through the
+<em>Nager.Date API</em>, and economic development data through the
+<em>World Bank API</em>. Additionally, it offers preloaded datasets on
+Brazil’s male and female population by state and year, film festivals,
+São Paulo’s emission factors, river data from Manaus, and records of
+yellow fever outbreaks.</p>
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;">
 
 </div>

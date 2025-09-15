@@ -1,10 +1,8 @@
 # BrazilDataAPI
 
-The `BrazilDataAPI` package provides a unified interface to access open data from the **BrasilAPI** and the **REST Countries API**, with a focus on *Brazil*. It allows users to easily retrieve up-to-date information on postal codes, banks, economic indicators, holidays, company registrations, and international country-level data relevant to *Brazil*.
+The `BrazilDataAPI` package provides a unified interface to access open data from the **BrasilAPI**, **REST Countries API**, **Nager.Date API**, and **World Bank API**, with a focus on *Brazil*. It allows users to easily retrieve up-to-date information on postal codes, banks, economic indicators, holidays, company registrations, international country-level data, public holidays information, and economic development data relevant to *Brazil*.
 
 In addition to API-access functions, the package includes a collection of curated datasets related to *Brazil*, covering diverse domains such as demographics (male and female population by state and year), river levels in *Manaus*, environmental emission factors in *São Paulo*, Brazilian film festivals, and historical yellow fever outbreaks.
-
-`BrazilDataAPI` is designed to support research, teaching, and data analysis focused on Brazil by integrating public RESTful APIs with high-quality, domain-specific datasets into a single, easy-to-use R package.
 
 ## Installation
 
@@ -51,6 +49,28 @@ Example: *get_brazil_vehicle_brands("motos")*,*get_brazil_vehicle_brands("caminh
 - `get_country_info()`: Get essential information about Brazil or any other country by its full name
 Example: *get_country_info("Brazil")*,*get_country_info("brazil")*,*get_country_info("Peru")*
 
+- `get_country_info_br()`: Get key country information for Brazil. 
+
+- `get_brazil_child_mortality()`: Get Brazil’s Under-5 Mortality Rate data from the World Bank.
+
+- `get_brazil_cpi()`: Get Brazil’s Consumer Price Index (2010 = 100) data from the World Bank.
+
+- `get_brazil_energy_use()`: Get Brazil’s Energy Use (kg of oil equivalent per capita) data from the World Bank.
+
+- `get_brazil_gdp()`: Get Brazil’s GDP (current US$) data from the World Bank.
+
+- `get_brazil_hospital_beds()`: Get Brazil’s Hospital Beds (per 1,000 people) data from the World Bank.
+
+- `get_brazil_life_expectancy()`: Get Brazil’s Life Expectancy at Birth data from the World Bank.
+
+- `get_brazil_literacy_rate()`: Get Brazil’s Adult Literacy Rate data from the World Bank.
+
+- `get_brazil_population()`: Get Brazil’s Total Population data from the World Bank.
+
+- `get_brazil_unemployment()`: Get Brazil’s Total Unemployment Rate data from the World Bank.
+
+- `get_brazil_holidays()`: Get official public holidays in Brazil for a given year, e.g., `get_brazil_holidays(2025)`.
+
 - `view_datasets_BrazilDataAPI()`: Lists all curated datasets included in the `BrazilDataAPI` package
 
 
@@ -82,7 +102,7 @@ A list object containing information on the flow of Yellow Fever cases between f
 library(BrazilDataAPI)
 
 # Selected, essential information about Brazil
-get_country_info()
+get_country_info_br()
 
 # Get List of Banks in Brazil
 get_brazil_banks()
