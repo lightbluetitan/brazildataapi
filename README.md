@@ -46,9 +46,6 @@ Example: *get_brazil_rate_name("CDI")*
 - `get_brazil_vehicle_brands()`: Get Vehicle Brands from BrasilAPI (FIPE Data)
 Example: *get_brazil_vehicle_brands("motos")*,*get_brazil_vehicle_brands("caminhoes")*
 
-- `get_country_info()`: Get essential information about Brazil or any other country by its full name
-Example: *get_country_info("Brazil")*,*get_country_info("brazil")*,*get_country_info("Peru")*
-
 - `get_country_info_br()`: Get key country information for Brazil. 
 
 - `get_brazil_child_mortality()`: Get Brazil’s Under-5 Mortality Rate data from the World Bank.
